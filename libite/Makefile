@@ -24,19 +24,19 @@ define Package/libite/description
 endef
 
 define Package/libite/install
-		$(INSTALL_DIR) $(1)/usr/lib
-		$(CP) $(PKG_BUILD_DIR)/src/.libs/libite.so.* $(1)/usr/lib/
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(CP) $(PKG_BUILD_DIR)/src/.libs/libite.so.* $(1)/usr/lib/
 endef
 
 define Build/InstallDev
-		$(INSTALL_DIR) $(1)/usr/include/libite
-		$(CP) $(PKG_BUILD_DIR)/src/*.h $(1)/usr/include/libite/
-		$(INSTALL_DIR) $(1)/usr/lib
-		$(CP) $(PKG_BUILD_DIR)/src/.libs/libite.so* $(1)/usr/lib/
-		$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
-		$(CP) \
-				$(PKG_BUILD_DIR)/src/libite.pc \
-				$(1)/usr/lib/pkgconfig/
+	$(INSTALL_DIR) $(1)/usr/include/libite
+	$(CP) $(PKG_BUILD_DIR)/src/*.h $(1)/usr/include/libite/
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(CP) $(PKG_BUILD_DIR)/src/.libs/libite.so* $(1)/usr/lib/
+	$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
+	$(CP) \
+			$(PKG_BUILD_DIR)/src/libite.pc \
+			$(1)/usr/lib/pkgconfig/
 endef
 
 $(eval $(call BuildPackage,libite))

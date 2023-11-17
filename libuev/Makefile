@@ -24,24 +24,20 @@ define Package/libuev/description
 	Linux epoll() family of APIs. 
 endef
 
-# define Build/Configure
-#   $(call Build/Configure/Default,--with-linux-headers=$(LINUX_DIR))
-# endef
-
 define Package/libuev/install
-		$(INSTALL_DIR) $(1)/usr/lib
-		$(CP) $(PKG_BUILD_DIR)/src/.libs/libuev.so.* $(1)/usr/lib/
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(CP) $(PKG_BUILD_DIR)/src/.libs/libuev.so.* $(1)/usr/lib/
 endef
 
 define Build/InstallDev
-		$(INSTALL_DIR) $(1)/usr/include/uev
-		$(CP) $(PKG_BUILD_DIR)/src/*.h $(1)/usr/include/uev/
-		$(INSTALL_DIR) $(1)/usr/lib
-		$(CP) $(PKG_BUILD_DIR)/src/.libs/libuev.so* $(1)/usr/lib/
-		$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
-		$(CP) \
-				$(PKG_BUILD_DIR)/src/libuev.pc \
-				$(1)/usr/lib/pkgconfig/
+	$(INSTALL_DIR) $(1)/usr/include/uev
+	$(CP) $(PKG_BUILD_DIR)/src/*.h $(1)/usr/include/uev/
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(CP) $(PKG_BUILD_DIR)/src/.libs/libuev.so* $(1)/usr/lib/
+	$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
+	$(CP) \
+			$(PKG_BUILD_DIR)/src/libuev.pc \
+			$(1)/usr/lib/pkgconfig/
 endef
 
 $(eval $(call BuildPackage,libuev))
