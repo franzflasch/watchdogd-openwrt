@@ -8,11 +8,11 @@ PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/franzflasch/watchdogd.git
 PKG_SOURCE_DATE:=2024-08-05
 PKG_SOURCE_VERSION:=6e8b63248ab1cc2969ffe898f1c403fb9d8048e9
-#PKG_MIRROR_HASH:=e0f186a0c139ccfac3d311f49e2fecdbd02fa3f9fe6ced4b1ce0baa603d49fc3
+PKG_MIRROR_HASH:=e0f186a0c139ccfac3d311f49e2fecdbd02fa3f9fe6ced4b1ce0baa603d49fc3
 PKG_MAINTAINER:=Franz Flasch <franz.flasch@gmx.at>
 PKG_LICENSE:=ISC
 
-PKG_MIRROR_HASH=skip
+#PKG_MIRROR_HASH=skip
 
 PKG_FIXUP:=autoreconf
 
