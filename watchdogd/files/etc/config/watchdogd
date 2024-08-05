@@ -1,0 +1,2 @@
+config watchdogd 'service_watchdog'
+    option enabled '0'

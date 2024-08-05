@@ -1,0 +1,2 @@
+config watchdogd-client-example 'watchdogd_client_example'
+    option enabled '0'
