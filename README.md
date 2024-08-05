@@ -17,5 +17,14 @@ watchdogd disable && sysupgrade -v <sysupgrade file>
 3. ```make menuconfig``` -> select watchdogd
 4. build OpenWrt.
 
+# build-modify-build sources
+1. clone source tree to some location
+```git clone https://github.com/franzflasch/watchdogd.git```
+2. if needed exec "autogen.sh" inside source tree for autotools based projects
+3. prepare build
+```make package/mypackages/watchdogd-openwrt/watchdogd/prepare USE_SOURCE_DIR=<source-tree-location> V=s```
+4. build
+```make package/mypackages/watchdogd-openwrt/watchdogd/compile V=s```
+
 # How to use
 https://troglobit.com/projects/watchdogd/
